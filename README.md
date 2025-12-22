@@ -181,9 +181,8 @@ Feel free to fork this repository and use it as a template for your own portfoli
 ## 📞 Support
 
 For questions or support, please reach out:
-- Email: ahmednawery@gmail.com
-- WhatsApp: [Contact](https://wa.me/971566208781)
+- Email: mostafaahmed0057@gmail.com
 
 ---
 
-**Built with ❤️ by Ahmed Noury**
+**Built with ❤️ by Mostafa Ahmed**
