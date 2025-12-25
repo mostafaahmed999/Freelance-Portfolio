@@ -37,8 +37,13 @@ const About = () => {
             <span className="text-primary font-semibold">Junior Electrical Engineer</span> with 2 years of experience in electrical design and site engineering within the UAE construction sector. 
             Strong background in power systems, electrical installations, site supervision, and BIM-based design, with hands-on experience using <span className="text-primary font-semibold">Revit, AutoCAD, DIALux, ETAP, MATLAB, and PLC</span>. 
             Proven ability to coordinate with contractors and consultants while ensuring compliance with safety standards, quality requirements, and project deadlines.
-            Currently working as <span className="text-primary font-semibold">Electrical Site Engineer</span> at Jazal Engineering & Contracting L.L.C in Abu Dhabi, UAE.
           </p>
+
+          <div className="p-6 md:p-8 rounded-xl bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/30 hover:border-primary/60 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 animate-fade-in-up">
+            <p className="text-lg font-semibold text-primary">
+              Currently working as <span className="text-accent">Electrical Site Engineer</span> at <span className="hover:text-accent transition-colors">Jazal Engineering & Contracting L.L.C</span> in Abu Dhabi, UAE.
+            </p>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-6 mt-8">
             {highlights.map((item, index) => (
