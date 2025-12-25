@@ -1,7 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Linkedin, Mail, Download, Youtube, Phone } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMusic } from "@fortawesome/free-brands-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import * as Brand from "@fortawesome/free-brands-svg-icons";
 import profilePic from "@/assets/Noury.png";
 import { portfolioData } from "@/data/portfolio";
+
+// Add all brand icons to library
+library.add(Brand.fab);
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -88,6 +95,9 @@ const Hero = () => {
           </a>
           <a href={portfolioData.personal.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:-translate-y-1" aria-label="LinkedIn Profile">
             <Linkedin className="w-6 h-6" />
+          </a>
+          <a href="https://www.tiktok.com/@electricalworld8?_r=1&_t=ZS-92WBegUzYDl" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:-translate-y-1" aria-label="TikTok Profile">
+            <FontAwesomeIcon icon={Brand.faTiktok} className="w-6 h-6" />
           </a>
           <a href={`mailto:${portfolioData.personal.email}`} className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:-translate-y-1" aria-label="Email Contact">
             <Mail className="w-6 h-6" />
