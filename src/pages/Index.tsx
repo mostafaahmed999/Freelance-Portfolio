@@ -2,9 +2,11 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
-import Education from "@/components/Education";
+import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
-// import Certifications from "@/components/Certifications";
+import EducationSection from "@/components/EducationSection";
+import Courses from "@/components/Courses";
+import YouTubeVideos from "@/components/YouTubeVideos";
 import Contact from "@/components/Contact";
 
 const Index = () => {
@@ -20,15 +22,21 @@ const Index = () => {
       <section id="skills">
         <Skills />
       </section>
-      <section id="education">
-        <Education />
+      <section id="experience">
+        <Experience />
       </section>
       <section id="projects">
         <Projects />
       </section>
-      {/* <section id="certifications">
-        <Certifications />
-      </section> */}
+      <section id="education">
+        <EducationSection />
+      </section>
+      <section id="courses">
+        <Courses />
+      </section>
+      <section id="youtube">
+        <YouTubeVideos />
+      </section>
       <section id="contact">
         <Contact />
       </section>

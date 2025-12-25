@@ -1,28 +1,27 @@
 import { Card } from "@/components/ui/card";
 import { Zap, Settings, Cpu, Languages } from "lucide-react";
-import { portfolioData } from "@/data/portfolio";
 
 const Skills = () => {
   const skillCategories = [
     {
       icon: Zap,
-      title: portfolioData.skills.electricalDesignBIM.category,
-      skills: portfolioData.skills.electricalDesignBIM.skills,
+      title: "Electrical Design & BIM",
+      skills: ["Revit", "AutoCAD", "DIALux Evo", "DIALux Red", "Shop Drawings", "BOQs", "Site Supervision"],
     },
     {
       icon: Cpu,
-      title: portfolioData.skills.automationControl.category,
-      skills: portfolioData.skills.automationControl.skills,
+      title: "Automation & Control",
+      skills: ["PLC", "TIA Portal", "Factory I/O", "Zelio", "Classic Control", "EKTS", "CADE"],
     },
     {
       icon: Settings,
-      title: portfolioData.skills.analysisSimulation.category,
-      skills: portfolioData.skills.analysisSimulation.skills,
+      title: "Analysis & Simulation",
+      skills: ["MATLAB", "ETAP", "Circuit Analysis", "Power Distribution", "Panel Schedules", "Solar Systems"],
     },
     {
       icon: Languages,
-      title: portfolioData.skills.languages.category,
-      skills: portfolioData.skills.languages.skills,
+      title: "Languages",
+      skills: ["Arabic (Native)", "English (Fluent)"],
     },
   ];
 
@@ -50,19 +49,19 @@ const Skills = () => {
             >
               <div className="space-y-4 flex flex-col h-full">
                 <div className="flex items-center gap-3">
-                  <div className="p-3 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300 group-hover:scale-110">
+                  <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
                     <category.icon className="w-6 h-6 text-primary group-hover:rotate-12 transition-transform duration-300" />
                   </div>
-                  <h3 className="text-lg font-bold group-hover:text-primary transition-colors">{category.title}</h3>
+                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">{category.title}</h3>
                 </div>
                 
                 <div className="space-y-2 flex-grow">
                   {category.skills.map((skill, skillIndex) => (
                     <div 
                       key={skillIndex}
-                      className="text-sm text-muted-foreground py-2 px-3 bg-gradient-to-r from-secondary/50 to-transparent rounded-md hover:from-secondary hover:to-secondary/50 hover:text-foreground transition-all duration-300 hover:translate-x-2 cursor-default border border-border/50 hover:border-primary/30"
+                      className="text-sm text-muted-foreground py-1.5 px-3 bg-secondary/50 rounded-md hover:bg-secondary hover:text-foreground transition-all duration-300 hover:translate-x-2 cursor-default"
                     >
-                      ✓ {skill}
+                      {skill}
                     </div>
                   ))}
                 </div>

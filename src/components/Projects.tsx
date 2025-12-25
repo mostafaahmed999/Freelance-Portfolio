@@ -1,18 +1,37 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Building, Sun } from "lucide-react";
-import { portfolioData } from "@/data/portfolio";
-
+import { ExternalLink, Building, Sun, Cable } from "lucide-react";
+import { Link } from "react-router-dom";
 const Projects = () => {
-  const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
-    "Building": Building,
-    "Sun": Sun
-  };
-
-  const projects = portfolioData.projects.map((proj, index) => ({
-    ...proj,
-    icon: index === 0 ? Building : Sun
-  }));
+  const projects = [
+    {
+      id: "jazal-cable",
+      title: "Jazal Cable Rehabilitation Project",
+      description: "Cable rehabilitation project involving IR testing using Megger, installing earth systems, and earth resistance testing. Ensuring cable integrity and safety compliance for electrical infrastructure.",
+      tech: ["IR Test (Megger)", "Earth System Installation", "Earth Resistance Test", "Cable Testing", "Site Supervision"],
+      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80",
+      icon: Cable,
+      type: "Site Project"
+    },
+    {
+      id: "hotel-revit",
+      title: "Hotel Electrical Design Project",
+      description: "Executed a full hotel electrical design using Revit with a collaborative BIM workflow. Designed and coordinated lighting systems, power distribution, panel schedules, and prepared BOQs.",
+      tech: ["Revit", "BIM Workflow", "Lighting Design", "Power Distribution", "Panel Schedules", "BOQ"],
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
+      icon: Building,
+      type: "Graduation Project"
+    },
+    {
+      id: "solar-school",
+      title: "Al-Zahra School Solar Project",
+      description: "Participated in the implementation of a complete solar power project for Al-Zahra School, El-Marg El-Gedida. Worked on system sizing, component selection, installation concepts, and system operation principles.",
+      tech: ["Solar Energy", "Off-Grid System", "System Sizing", "Component Selection", "Installation"],
+      image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
+      icon: Sun,
+      type: "Training Project"
+    },
+  ];
 
   return (
     <section id="projects" className="min-h-screen flex items-center py-20 px-4 bg-card/30 relative overflow-hidden">
@@ -59,7 +78,7 @@ const Projects = () => {
                 <p className="text-muted-foreground text-sm">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 flex-grow">
-                  {project.technologies.map((tech, techIndex) => (
+                  {project.tech.map((tech, techIndex) => (
                     <span 
                       key={techIndex}
                       className="text-xs px-2 py-1 bg-primary/10 text-primary rounded h-fit"
@@ -70,15 +89,16 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-3 pt-2 mt-auto">
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="flex-1 border-primary/50 hover:bg-primary/10 hover:text-primary transition-all duration-300"
-                    onClick={() => {}}
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Details
-                  </Button>
+                  <Link to={`/project/${project.id}`} className="flex-1">
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="w-full border-primary/50 hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      View Details
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </Card>

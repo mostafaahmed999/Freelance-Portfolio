@@ -23,11 +23,13 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { id: "about", label: "About" },
+    { id: "about", label: "About Me" },
     { id: "skills", label: "Skills" },
+    { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "education", label: "Education" },
-    // { id: "certifications", label: "Certifications" },
+    { id: "courses", label: "Courses" },
+    { id: "youtube", label: "YouTube" },
     { id: "contact", label: "Contact" },
   ];
 

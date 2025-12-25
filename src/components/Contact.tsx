@@ -9,7 +9,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
-import { portfolioData } from "@/data/portfolio";
 
 const contactFormSchema = z.object({
   name: z.string().trim().min(2, { message: "Name must be at least 2 characters" }).max(100, { message: "Name must be less than 100 characters" }),
@@ -41,7 +40,7 @@ const Contact = () => {
       
       const whatsappMessage = `*New Contact Form Submission*%0A%0A*Name:* ${encodeURIComponent(data.name)}%0A*Email:* ${encodeURIComponent(data.email)}%0A*Subject:* ${encodeURIComponent(data.subject)}%0A%0A*Message:*%0A${encodeURIComponent(data.message)}`;
       
-      window.open(`https://wa.me/${portfolioData.personal.phone.replace(/\s/g, '')}?text=${whatsappMessage}`, '_blank');
+      window.open(`https://wa.me/971566208781?text=${whatsappMessage}`, '_blank');
       
       toast({
         title: "Message Sent Successfully! ✓",
@@ -66,31 +65,31 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: portfolioData.personal.email,
-      href: `mailto:${portfolioData.personal.email}`,
+      value: "ahmednawery@gmail.com",
+      href: "mailto:ahmednawery@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: portfolioData.personal.phone,
-      href: `tel:${portfolioData.personal.phone.replace(/\s/g, '')}`,
+      value: "+971 566 208 781",
+      href: "tel:+971566208781",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       value: "Ahmed Noury",
-      href: portfolioData.personal.linkedin,
+      href: "https://tinyurl.com/4uywynhr",
     },
     {
       icon: Youtube,
       label: "YouTube",
       value: "@electricalworld188",
-      href: portfolioData.personal.youtube,
+      href: "https://www.youtube.com/@electricalworld188",
     },
   ];
 
   const personalInfo = [
-    { icon: MapPin, label: "Location", value: portfolioData.personal.location },
+    { icon: MapPin, label: "Location", value: "Abu Dhabi, UAE" },
   ];
 
   return (

@@ -1,19 +1,24 @@
 import { Card } from "@/components/ui/card";
 import { Zap, Lightbulb, Users } from "lucide-react";
-import { portfolioData } from "@/data/portfolio";
 
 const About = () => {
-  const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
-    Zap,
-    Lightbulb,
-    Users
-  };
-
-  const highlights = portfolioData.highlights.map(item => ({
-    icon: iconMap[item.icon] || Zap,
-    title: item.title,
-    description: item.description
-  }));
+  const highlights = [
+    {
+      icon: Zap,
+      title: "Electrical Systems",
+      description: "Expert in power systems and automation",
+    },
+    {
+      icon: Lightbulb,
+      title: "Renewable Energy",
+      description: "Solar energy and off-grid systems",
+    },
+    {
+      icon: Users,
+      title: "Team Collaboration",
+      description: "Effective communication and teamwork",
+    },
+  ];
 
   return (
     <section id="about" className="min-h-screen flex items-center py-20 px-4 relative overflow-hidden">
@@ -29,7 +34,10 @@ const About = () => {
 
         <Card className="p-8 md:p-12 bg-card/80 backdrop-blur-sm border-border hover:border-primary/30 transition-all duration-500 animate-scale-in">
           <p className="text-lg text-foreground/90 leading-relaxed mb-8">
-            {portfolioData.personal.summary}
+            <span className="text-primary font-semibold">Junior Electrical Engineer</span> with 2 years of experience in electrical design and site engineering within the UAE construction sector. 
+            Strong background in power systems, electrical installations, site supervision, and BIM-based design, with hands-on experience using <span className="text-primary font-semibold">Revit, AutoCAD, DIALux, ETAP, MATLAB, and PLC</span>. 
+            Proven ability to coordinate with contractors and consultants while ensuring compliance with safety standards, quality requirements, and project deadlines.
+            Currently working as <span className="text-primary font-semibold">Electrical Site Engineer</span> at Jazal Engineering & Contracting L.L.C in Abu Dhabi, UAE.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mt-8">
